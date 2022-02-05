@@ -18,12 +18,13 @@ public class CardOrderTest {
 
     @BeforeAll
     public static void setUpAll() {
+
         WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
     public void setUp() {
-        driver = new ChromeDriver();
+    //    driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
@@ -33,8 +34,9 @@ public class CardOrderTest {
 
     @AfterEach
     public void tearDown() {
-        driver.quit();
-        driver = null;
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     @Test
