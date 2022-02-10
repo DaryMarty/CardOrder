@@ -26,9 +26,13 @@ public class CardOrderTest {
     public void setUp() {
     //    driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("start-maximized");
+        options.addArguments("disable-infobars");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
+        options.addArguments("--disable-extensions");
+        options.addArguments("--no-sandbox");
         driver = new ChromeDriver(options);
     }
 
